@@ -45,4 +45,15 @@ RSpec.describe Book, type: :model do
       end
     end
   end
+
+  describe "Book#bonus" do
+    context "lucky?がtrueのとき" do
+      it "チェキが返ること" do
+        book = Book.new
+        allow(book).to receive(:lucky?).and_return(true)
+        expect(book).to receive(:lucky?)
+        expect(book.bonus).to eq("著者サイン入りチェキ")
+      end
+    end
+  end
 end
