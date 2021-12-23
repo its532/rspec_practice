@@ -16,4 +16,10 @@ RSpec.describe "books", type: :system do
     expect(page).to have_text("Title: RubyBook")
     expect(page).to have_text("Author: its")
   end
+
+  it "enables me to create widgets" do
+    book = FactoryBot.create(:book)
+    visit "/books"
+    expect(page).to have_text(book.title)
+  end
 end
