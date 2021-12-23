@@ -9,4 +9,8 @@ FactoryBot.define do
       book.variations.create!(kind: "paper book")
     end
   end
+
+  def take_pictures
+    raise RuntimeError.new("写真撮影はご遠慮ください")
+  end
 end
