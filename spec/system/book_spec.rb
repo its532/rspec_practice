@@ -22,4 +22,10 @@ RSpec.describe "books", type: :system do
     visit "/books"
     expect(page).to have_text(book.title)
   end
+
+  it "enables" do
+    book = FactoryBot.create(:book)
+    visit "/books"
+    expect(page).to have_text(book.title)
+  end
 end
